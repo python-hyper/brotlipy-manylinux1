@@ -1,5 +1,4 @@
 FROM quay.io/pypa/manylinux1_i686
-MAINTAINER Python Cryptographic Authority
+MAINTAINER Python Hyper Project
 ADD scripts/ /root/scripts
 WORKDIR /root/scripts
-RUN sh install_libffi.sh
