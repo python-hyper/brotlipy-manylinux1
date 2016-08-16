@@ -1,8 +1,11 @@
 #!/bin/bash
 set -x -e
 
+# Exclude Python 2.6 by just...blowing it away.
+rm -rf /opt/python/cp26*
+
 for PYBIN in /opt/python/*/bin; do
-    ${PYBIN}/pip install cffi
+    ${PYBIN}/pip install cffi enum34
     ${PYBIN}/pip wheel --no-deps brotlipy -w wheelhouse/
 done
 
